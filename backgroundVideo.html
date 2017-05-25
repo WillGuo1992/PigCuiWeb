@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Pig_Cui</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage full-screen backgrounds." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="./css/examples.css" />
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+	h2{
+		font-size: 3em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+		overflow: hidden;
+	}
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section0 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 50%;
+		
+
+		/* 
+		* Preventing flicker on some browsers 
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+
+
+	/* Hiding video controls 
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+	video::-webkit-media-controls {
+	  display:none !important;
+	}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="./vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="./js/examples.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: true,
+				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE','#a8a4c4']
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<video id="myVideo" loop muted data-autoplay>
+			<source src="./imgs/flowers.mp4" type="video/mp4">
+			<source src="./imgs/flowers.webm" type="video/webm">
+		</video>
+		<div class="layer">
+			<h1>崔~小~猪</h1>
+		</div>
+	</div>
+	<div class="section" id="section1">
+	    <div class="slide" id="slide1">
+	    	<h1>从前慢</h1>
+	    	<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;木心</h2>
+	    	<h2>从前的日色变得慢</h2>
+			<h2>&nbsp;</h2>
+			<h2>车，马，邮件都慢</h2>
+			<h2>&nbsp; </h2>
+			<h2>一生只够爱一个人</h2>
+			<h2>&nbsp; </h2>
+			<h2>从前的锁也好看</h2>
+			<h2> &nbsp;</h2>
+			<h2>钥匙精美有样子</h2>
+			<h2>&nbsp; </h2>
+			<h2>你锁了 人家就懂了</h2>
+	    </div>
+	    <div class="slide" id="slide2">
+	    	<h1>Aquí estoy</h1>
+	    	<h1>Nunca me fui</h1>
+	    	<h1>Antes de ti</h1>
+	    	<h1>No era</h1>
+	    	<h1>ADespués de ti </h1>
+	    	<h1>Sólo nos queda el somos. </h1>
+	    </div>
+	</div>
+	<div class="section" id="section2">
+		<h1>Don't try so hard, 
+		 <br />the best things come 
+		 <br />when you least expect them to.</h1></div>
+	<div class="section" id="section3">
+		<h1>smile<br />
+		 because it happened</h1></div>
+</div>
+
+</body>
+</html>
